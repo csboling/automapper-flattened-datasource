@@ -7,6 +7,7 @@ namespace automapper_flattened_datasource
 {
     public class TestWhereOnFlattenedCollection : BaseTestFixture
     {
+        // passes, but evaluated client side
         [Fact]
         public void ProjectTo_ThenWhereAny()
         {
@@ -27,6 +28,7 @@ namespace automapper_flattened_datasource
             }
         }
 
+        // fails when referencing a flattened collection
         [Fact]
         public void UseAsDataSource_ThenWhereAny()
         {
@@ -49,6 +51,7 @@ namespace automapper_flattened_datasource
             }
         }
 
+        // passes when referencing an "ordinary" collection, evaluated client side
         [Fact]
         public void UnflattenedCollection_ProjectTo_ThenWhereAny()
         {
@@ -69,6 +72,7 @@ namespace automapper_flattened_datasource
             }
         }
 
+        // passes when referencing an "ordinary" collection
         [Fact]
         public void UnflattenedCollection_UseAsDataSource_ThenWhereAny()
         {
